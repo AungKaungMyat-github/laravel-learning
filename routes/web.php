@@ -22,3 +22,7 @@ Route::get('/test', function () {
 });
 
 Route::get('/fruits', [FruitController::class, 'index']);
+
+Route::get('/fruits/create', [FruitController::class, 'create']);
+
+Route::post('/fruits', [FruitController::class, 'store']);
