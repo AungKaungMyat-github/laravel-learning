@@ -18,11 +18,18 @@ Route::get('/', function () {
 });
 
 Route::get('/test', function () {
-    return view('test');
+    return view('test', [
+        'script' => "<script> alert('you are hacked')</script>"
+    ]);
 });
 
 Route::get('/fruits', [FruitController::class, 'index']);
-
 Route::get('/fruits/create', [FruitController::class, 'create']);
-
+Route::get('/fruits/{id}', [FruitController::class, 'show']);
 Route::post('/fruits', [FruitController::class, 'store']);
+
+Route::get('/fruits/{id}/edit', [FruitController::class, 'edit']);
+Route::patch('/fruits/{id}', [FruitController::class, 'update']);
+
+
+Route::delete('/fruits/{id}', [FruitController::class, 'destroy']);

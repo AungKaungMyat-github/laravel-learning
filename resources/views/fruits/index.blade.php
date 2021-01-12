@@ -7,7 +7,7 @@
 @section('content')
     @foreach($fruits as $fruit)
     <li style="color: blue">
-        {{ $fruit->name }}
+        <a href="/fruits/{{ $fruit->id }}">{{ $fruit->name }}</a>
     </li>
     @endforeach
 @endsection

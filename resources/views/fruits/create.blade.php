@@ -11,4 +11,14 @@
         Description : <input type="text" name="description"> <br>
         <input type="submit" value="Add">
     </form>
+
+    @if ($errors -> any())
+        <div style="color: black">
+            <ul>
+                @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
 @endsection
